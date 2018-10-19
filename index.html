@@ -7,89 +7,110 @@
 	<title>Генератор ФОТО</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="drag-and-drop.css">
 
 </head>
 
 <body>
-	<div class="wrapper">
-		<div class="num-wrapper">
-			<input name="" type="number" id="text" cols="30" rows="10" placeholder="Сколько элементов">
-			<div class="interval">
-				<p>С</p>
-				<input type="text" id="start">
-				<p>ПО</p>
-				<input type="text" id="end">
-				<div class="reset">
-					×
+	<div class="wrapp-all">
+		<div class="wrapper">
+			<div class="num-wrapper">
+				<div class="item-num">
+					<input name="" type="number" id="text" cols="30" rows="10" placeholder="Сколько элементов">
+					<div class="interval">
+						<p>С</p>
+						<input type="text" id="start">
+						<p>ПО</p>
+						<input type="text" id="end">
+					</div>
+					<div class="pass-foto">
+						<p>Только эти фото (ч-з пробел)</p>
+						<input type="text" id="only">
+					</div>
+					<div class="pass-foto">
+						<p>Пропуск фото (ч-з пробел)</p>
+						<input type="text" id="pass">
+					</div>
+				</div>
+				<div class="item-num">
+					<div class="reset">
+						×
+					</div>
 				</div>
 			</div>
-			<div class="pass-foto">
-				<p>Только эти фото (ч-з пробел)</p>
-				<input type="text" id="only">
+			<button id="btn" class="btn-get">Получить</button>
+			<button id="btnSlide" class="btn-get d-n">Получить</button>
+			<textarea name="" id="result" cols="30" rows="10"></textarea>
+
+
+			<div class="gui">
+				<button id="gui-btn" class="">Графический интерфейс</button>
 			</div>
-			<div class="pass-foto">
-				<p>Пропуск фото (ч-з пробел)</p>
-				<input type="text" id="pass">
-			</div>
+
 		</div>
-		<button id="btn" class="btn-get">Получить</button>
-		<button id="btnSlide" class="btn-get d-n">Получить</button>
-		<textarea name="" id="result" cols="30" rows="10"></textarea>
-	</div>
-	<section class="s-option">
-		<div class="option-wrapper common__container ">
-			<div class="option">
-				<div class="item">
-					<h4>Без подписи</h4>
-					<input type="checkbox" id="min-max">
-					<h4>С подписью</h4>
-				</div>
-				<div class="item">
-					<h4>jpg</h4>
-					<input type="checkbox" id="jpg-png">
-					<h4>png</h4>
-				</div>
+		<div class="wrapper-2">
 
-				<div class="item-input-multyline">
-					<div class="item-wrap">
-						<h4>Без "image80"</h4>
-						<input type="checkbox" id="image80">
-						<h4>С "image80"</h4>
-					</div>
-					<div class="item-wrap">
-						<h4>Свой класс</h4>
-						<input type="text" id="my-class" placeholder="">
-					</div>
+			<div class="option__slider">
+				<div class="zoom-slider">
+					<h4 class="zoom" id="zoom">ZOOM</h4>
+					<h4 class="slider" id="slider">SLIDER</h4>
 				</div>
+			</div>
 
-				<div class="item">
-					<h4>Без рамки</h4>
-					<input type="checkbox" id="border">
-					<h4>С рамкой</h4>
-				</div>
-				<div class="item">
-					<h4>Без тени</h4>
-					<input type="checkbox" id="shadow">
-					<h4>С тенью</h4>
-				</div>
-				<div class="item input">
-					<h4>Data-size</h4>
-					<input type="text" id="dataSize1"> ×
-					<input type="text" id="dataSize2">
-				</div>
-				<div class="item-input-multyline">
-					<div class="item-wrap">
-						<h4>Отступ сверху</h4>
-						<input type="text" id="mTop" placeholder="2"> <span>em</span>
-					</div>
-					<div class="item-wrap">
-						<h4>Отступ снизу</h4>
-						<input type="text" id="mBottom" placeholder="2"> <span>em</span>
-					</div>
-				</div>
+			<section class="s-option">
+				<div class="option-wrapper common__container ">
+					<div class="option">
+						<div class="item">
+							<h4>Без подписи</h4>
+							<input type="checkbox" id="min-max">
+							<h4>С подписью</h4>
+						</div>
+						<div class="item">
+							<h4>jpg</h4>
+							<input type="checkbox" id="jpg-png">
+							<h4>png</h4>
+						</div>
+
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Без "image80"</h4>
+								<input type="checkbox" id="image80">
+								<h4>С "image80"</h4>
+							</div>
+							<div class="item-wrap">
+								<h4>Свой класс</h4>
+								<input type="text" id="my-class" placeholder="">
+							</div>
+						</div>
+
+						<div class="item">
+							<h4>Без рамки</h4>
+							<input type="checkbox" id="border">
+							<h4>С рамкой</h4>
+						</div>
+						<div class="item">
+							<h4>Без тени</h4>
+							<input type="checkbox" id="shadow">
+							<h4>С тенью</h4>
+						</div>
+						<div class="item input">
+							<h4>Data-size</h4>
+							<input type="text" id="dataSize1"> ×
+							<input type="text" id="dataSize2">
+						</div>
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Отступ сверху</h4>
+								<input type="text" id="mTop" placeholder="2"> <span>em</span>
+							</div>
+							<div class="item-wrap">
+								<h4>Отступ снизу</h4>
+								<input type="text" id="mBottom" placeholder="2"> <span>em</span>
+							</div>
+						</div>
 
 
-				<!-- 	<div class="item item-column">
+						<!-- 	<div class="item item-column">
 				<label>
 					<input type="radio" class="option-input radio" name="example" checked /> Radio option
 				</label>
@@ -101,83 +122,128 @@
 				</label>
 			</div> -->
 
-			</div>
-			<div class="option">
-				<div class="item">
-					<div class="item-wrap add-code">
-						<h4>Добавить код сверху</h4>&nbsp;
-						<textarea name="" id="addcode-top" cols="30" rows="4"></textarea>
+					</div>
+					<div class="option">
+						<div class="item">
+							<div class="item-wrap add-code">
+								<h4>Добавить код сверху</h4>&nbsp;
+								<textarea name="" id="addcode-top" cols="30" rows="4"></textarea>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-wrap add-code">
+								<h4>Добавить код снизу</h4>&nbsp;
+								<textarea name="" id="addcode-bottom" cols="30" rows="4"></textarea>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="item">
-					<div class="item-wrap add-code">
-						<h4>Добавить код снизу</h4>&nbsp;
-						<textarea name="" id="addcode-bottom" cols="30" rows="4"></textarea>
+
+				<div class="option-wrapper slider__container d-n">
+					<div class="option">
+						<div class="item">
+							<h4>jpg</h4>
+							<input type="checkbox" id="jpg-png-slider">
+							<h4>png</h4>
+						</div>
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Без "image80"</h4>
+								<input type="checkbox" id="image80-slider">
+								<h4>С "image80"</h4>
+							</div>
+							<div class="item-wrap">
+								<h4>Свой класс</h4>
+								<input type="text" id="my-class-slider" placeholder="">
+							</div>
+						</div>
+						<div class="item input">
+							<h4>Data-size</h4>
+							<input type="text" id="dataSize1-slider" placeholder="1200"> ×
+							<input type="text" id="dataSize2-slider" placeholder="800">
+						</div>
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Отступ сверху</h4>
+								<input type="text" id="mTop-slider" placeholder="2"> <span>em</span>
+							</div>
+							<div class="item-wrap">
+								<h4>Отступ снизу</h4>
+								<input type="text" id="mBottom-slider" placeholder="2"> <span>em</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-wrap add-code">
+								<h4>Добавить код сверху</h4>&nbsp;
+								<textarea name="" id="addcode-top-slider" cols="30" rows="4"></textarea>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-wrap add-code">
+								<h4>Добавить код снизу</h4>&nbsp;
+								<textarea name="" id="addcode-bottom-slider" cols="30" rows="4"></textarea>
+							</div>
+						</div>
 					</div>
+
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<section class="grfic-interface d-n">
+
+		<div class="wrapper-gui">
+			<div class="gui-item">
+				<!-- Область предпросмотра -->
+				<div id="uploaded-holder">
+					<div id="dropped-files">
+						<!-- Кнопки загрузить и удалить, а также количество файлов -->
+						<div id="upload-button">
+							<center>
+								<!-- Прогресс бар загрузки -->
+								<div id="loading">
+									<div id="loading-bar">
+										<div class="loading-color"></div>
+									</div>
+									<div id="loading-content"></div>
+								</div>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="gui-item">
+				<div class="content">
+					<!-- Область для перетаскивания -->
+					<div id="drop-files" ondragover="return false">
+						<p>Перетащите изображение сюда</p>
+						<form id="frm">
+							<input type="file" id="uploadbtn" multiple />
+						</form>
+					</div>
+					<!-- Список загруженных файлов -->
+					<div id="file-name-holder">
+						<ul id="uploaded-files">
+							<h1>Загруженные файлы</h1>
+						</ul>
+					</div>
+
 				</div>
 			</div>
 		</div>
 
-		<div class="option-wrapper slider__container d-n">
-			<div class="option">
-				<div class="item">
-					<h4>jpg</h4>
-					<input type="checkbox" id="jpg-png-slider">
-					<h4>png</h4>
-				</div>
-				<div class="item-input-multyline">
-					<div class="item-wrap">
-						<h4>Без "image80"</h4>
-<input type="checkbox" id="image80-slider">
-						<h4>С "image80"</h4>
-					</div>
-					<div class="item-wrap">
-						<h4>Свой класс</h4>
-						<input type="text" id="my-class-slider" placeholder="">
-					</div>
-				</div>
-				<div class="item input">
-					<h4>Data-size</h4>
-					<input type="text" id="dataSize1-slider" placeholder="1200"> ×
-					<input type="text" id="dataSize2-slider" placeholder="800">
-				</div>
-				<div class="item-input-multyline">
-					<div class="item-wrap">
-						<h4>Отступ сверху</h4>
-						<input type="text" id="mTop-slider" placeholder="2"> <span>em</span>
-					</div>
-					<div class="item-wrap">
-						<h4>Отступ снизу</h4>
-						<input type="text" id="mBottom-slider" placeholder="2"> <span>em</span>
-					</div>
-				</div>
-				<div class="item">
-					<div class="item-wrap add-code">
-						<h4>Добавить код сверху</h4>&nbsp;
-						<textarea name="" id="addcode-top-slider" cols="30" rows="4"></textarea>
-					</div>
-				</div>
-				<div class="item">
-					<div class="item-wrap add-code">
-						<h4>Добавить код снизу</h4>&nbsp;
-						<textarea name="" id="addcode-bottom-slider" cols="30" rows="4"></textarea>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="option__slider">
-			<div class="option__slider-wrap" id="slider">
-				<h4>Слайдер</h4>
-			</div>
-		</div>
 	</section>
+
+
+
+
 
 
 	<script src="jquery.min.js"></script>
 	<script src="script.js"></script>
 	<script src="script-slider.js"></script>
+	<script src="dragAndDropImg.js"></script>
 
 </body>
 

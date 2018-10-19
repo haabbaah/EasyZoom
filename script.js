@@ -91,11 +91,11 @@ $(function () {
 	function getMax(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, addCodeTop, addCodeBottom, arrPass, arrOnly) {
 		var i = +start || 1;
 		var max = Math.max.apply(null, arrOnly);
-			if (end) {
-				num = end;
-			} else if (max) {
-				num = max;
-			}
+		if (end) {
+			num = end;
+		} else if (max) {
+			num = max;
+		}
 
 
 
@@ -137,11 +137,11 @@ $(function () {
 
 		for (i; i <= num; i++) {
 			function isPositive(number) {
-				return number == i; 
+				return number == i;
 			}
 
 			function isNegative(number2) {
-				return number2 == i; 
+				return number2 == i;
 			}
 			passCheck = arrPass.some(isPositive);
 			if (passCheck) {
@@ -199,7 +199,6 @@ $(function () {
 		document.execCommand("copy");
 		//Автоматическое копирование в буфер обменм end
 
-		//console.log(jpgPng); .replace(/ /g, '')
 	});
 
 
@@ -222,27 +221,38 @@ $(function () {
 			$("#mBottom").attr("placeholder", "2");
 		}
 	});
+
 	$(".reset").on("click", function () {
-		$("#start, #end, #text").val("");
+		$("#start, #end, #text, #only, #pass").val("");
+	});	
+
+
+	$("#gui-btn").on("click", function () {
+		$(".wrapp-all").addClass('d-n');
 	});
 
-	var flagSlider = 0;
+
+
 	$("#slider").on("click", function () {
-		if (flagSlider === 0) {
-			$("#slider h4").text("Zoom");
-			$("#btn").toggleClass("d-n");
-			$("#btnSlide").toggleClass("d-n");
-			flagSlider = 1;
-		} else {
-			$("#slider h4").text("Слайдер");
-			$("#btn").toggleClass("d-n");
-			$("#btnSlide").toggleClass("d-n");
-			flagSlider = 0;
-		}
-		$(".slider__container").toggleClass("d-n");
-		$(".common__container").toggleClass("d-n");
+		$(".option__slider .zoom-slider .zoom").css('flex-grow', '1');
+		$(".option__slider .zoom-slider .slider").css('flex-grow', '7');
 
+		$(".slider__container").removeClass("d-n");
+		$(".common__container").addClass("d-n");
 
+		$("#btn").addClass("d-n");
+		$("#btnSlide").removeClass("d-n");
+	});
+
+	$("#zoom").on("click", function () {
+		$(".option__slider .zoom-slider .zoom").css('flex-grow', '7');
+		$(".option__slider .zoom-slider .slider").css('flex-grow', '1');
+
+		$(".slider__container").addClass("d-n");
+		$(".common__container").removeClass("d-n");
+
+		$("#btn").removeClass("d-n");
+		$("#btnSlide").addClass("d-n");
 	});
 
 
