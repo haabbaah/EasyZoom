@@ -72,13 +72,9 @@
 						</div>
 
 						<div class="item-input-multyline">
+
 							<div class="item-wrap">
-								<h4>Без "image80"</h4>
-								<input type="checkbox" id="image80">
-								<h4>С "image80"</h4>
-							</div>
-							<div class="item-wrap">
-								<h4>Свой класс</h4>
+								<h4>Обернуть в свой класс</h4>
 								<input type="text" id="my-class" placeholder="">
 							</div>
 						</div>
@@ -148,12 +144,7 @@
 						</div>
 						<div class="item-input-multyline">
 							<div class="item-wrap">
-								<h4>Без "image80"</h4>
-								<input type="checkbox" id="image80-slider">
-								<h4>С "image80"</h4>
-							</div>
-							<div class="item-wrap">
-								<h4>Свой класс</h4>
+								<h4>Обернуть в свой класс</h4>
 								<input type="text" id="my-class-slider" placeholder="">
 							</div>
 						</div>
@@ -192,7 +183,6 @@
 	</div>
 
 	<section class="grfic-interface d-n">
-
 		<div class="wrapper-gui">
 			<div class="gui-item">
 				<!-- Область предпросмотра -->
@@ -212,8 +202,12 @@
 						</div>
 					</div>
 				</div>
+				<!-- <textarea class="description" cols="30" rows="3"></textarea> -->
 			</div>
 			<div class="gui-item">
+				<div class="close-gui">
+					ВЫЙТИ
+				</div>
 				<div class="content">
 					<!-- Область для перетаскивания -->
 					<div id="drop-files" ondragover="return false">
@@ -230,6 +224,10 @@
 					</div>
 
 				</div>
+				<div class="get-gui-code">
+					<button id="btn-gui" class="btn-get">Получить</button>
+					<textarea name="" id="result-gui" cols="30" rows="10"></textarea>
+				</div>
 			</div>
 		</div>
 
@@ -244,6 +242,7 @@
 	<script src="script.js"></script>
 	<script src="script-slider.js"></script>
 	<script src="dragAndDropImg.js"></script>
+	<script src="gui.js"></script>
 
 </body>
 

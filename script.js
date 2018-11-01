@@ -157,7 +157,7 @@ $(function () {
 			if (i < 10) {
 				i = "0" + i;
 			}
-			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + border + ' ' + shadow + '" />\n</a>\n<figcaption itemprop="caption description">\n </figcaption>\n</figure>\n</div>\n' + endImage80 + '<figcaption itemprop="caption description">\n</figcaption>\n' + addCodeBottom;
+			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + border + ' ' + shadow + '" />\n</a>\n<figcaption itemprop="caption description">\n\n </figcaption>\n</figure>\n</div>\n' + endImage80 + '<figcaption itemprop="caption description">\n\n</figcaption>\n' + addCodeBottom;
 		}
 		return str;
 	}
@@ -202,17 +202,13 @@ $(function () {
 	});
 
 
-	$("#btnSlide").on("click", function () {
 
 
+
+	$(".close-gui").on("click", function () {
+		$(".wrapp-all").removeClass('d-n');
+		$(".grfic-interface").addClass('d-n');
 	});
-
-
-
-
-
-
-
 
 	$("#min-max").change(function () {
 		if (this.checked) {
@@ -224,11 +220,12 @@ $(function () {
 
 	$(".reset").on("click", function () {
 		$("#start, #end, #text, #only, #pass").val("");
-	});	
+	});
 
 
 	$("#gui-btn").on("click", function () {
 		$(".wrapp-all").addClass('d-n');
+		$(".grfic-interface").removeClass('d-n');
 	});
 
 

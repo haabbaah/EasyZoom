@@ -64,6 +64,11 @@
 	overflow: hidden;
 }
 
+.description {
+ width: 70%;
+ margin-bottom: 3em;
+}
+
 #upload-button .ss-upload {
 	font-size: 0.7em;
 }
