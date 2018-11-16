@@ -83,7 +83,7 @@ $(function () {
 				i = "0" + i;
 			}
 
-			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + border + shadow + '" />\n</a>\n</figure>\n</div>\n' + endImage80 + addCodeBottom;
+			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + border + ' ' + shadow + '" />\n</a>\n</figure>\n</div>\n' + endImage80 + addCodeBottom;
 		}
 		return str;
 	}
@@ -128,7 +128,6 @@ $(function () {
 		}
 
 		shadow ? shadow = 'shadow' : shadow = '';
-
 		jpgPng ? jpgPng = 'png' : jpgPng = 'jpg';
 		border ? border = 'frame' : border = '';
 

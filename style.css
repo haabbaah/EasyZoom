@@ -288,6 +288,12 @@ h1, h2, h3, h4, h5, h6 {
           justify-content: space-between;
 }
 
+.grfic-interface .wrapper-gui .gui-item {
+  min-width: 26em;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
 .grfic-interface .wrapper-gui .gui-item:first-child {
   -webkit-box-flex: 8;
       -ms-flex-positive: 8;
@@ -301,10 +307,13 @@ h1, h2, h3, h4, h5, h6 {
       -ms-flex-positive: 1;
           flex-grow: 1;
   height: 100vh;
+  padding-right: 1.5em;
+  overflow: auto;
 }
 
 .grfic-interface .wrapper-gui .gui-item:last-child .get-gui-code {
   position: fixed;
+  top: 21em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,7 +321,17 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 38em;
+  width: 31em;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .content {
+  position: fixed;
+  top: 5em;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .close-gui {
+  position: fixed;
+  min-width: 15.5em;
 }
 
 .grfic-interface .wrapper-gui .gui-item:last-child .close-gui {
@@ -324,6 +343,137 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1em;
   padding: 0.1em 0;
   font-size: 200%;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item {
+  position: fixed;
+  top: 35em;
+  width: 29.8em;
+  border: 1px solid #000;
+  padding: 0.5em;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item .item input {
+  width: 40px;
+  height: 20px;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item .item input[type="checkbox"]::before {
+  width: 20px;
+  height: 20px;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item .item input:checked[type="checkbox"]::before {
+  left: 20px;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item .item h4 {
+  font-size: 90%;
+  margin: 0.5em 0;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grfic-interface .wrapper-gui .gui-item:last-child .option-item .input input {
+  height: 16px;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element button {
+  border: 1px solid #02a9f4;
+  background-color: #02a9f4;
+  margin-bottom: .5em;
+  border-radius: 5px;
+  padding: 0 1em;
+  cursor: pointer;
+  -webkit-transition: all .17s ease;
+  transition: all .17s ease;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element button:hover {
+  background-color: #fff;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element button:hover i {
+  color: #02a9f4;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element button i {
+  font-family: fontello;
+  font-style: normal;
+  font-size: 150%;
+  color: #fff;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element .option-item {
+  position: absolute;
+  width: 22em;
+  background-color: rgba(0, 0, 0, 0.95);
+  border-radius: 5px;
+  color: #fff;
+  display: none;
+  z-index: 10;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element .option-item .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element .option-item .item h4 {
+  font-size: 90%;
+  margin: 0.5em 0;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element .option-item .item input {
+  width: 40px;
+  height: 20px;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element .option-item .item input[type="checkbox"]::before {
+  width: 20px;
+  height: 20px;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element .option-item .item input:checked[type="checkbox"]::before {
+  left: 20px;
+}
+
+.grfic-interface .wrapper-gui .gui-item .wrapper-element .option-item .input input {
+  height: 15px;
+}
+
+.grfic-interface .wrapper-gui .gui-item .description {
+  width: 26.7em;
 }
 
 /* Чекбокс */
@@ -425,6 +575,14 @@ input:checked[type="checkbox"]::before {
 }
 
 /* Переключатель end */
+@font-face {
+  font-family: 'fontello';
+  src: url("fontello-e5041052/font/fontello.eot?18878437");
+  src: url("../font/fontello.eot?18878437#iefix") format("embedded-opentype"), url("fontello-e5041052/font/fontello.woff2?18878437") format("woff2"), url("fontello-e5041052/font/fontello.woff?18878437") format("woff"), url("fontello-e5041052/font/fontello.ttf?18878437") format("truetype"), url("fontello-e5041052/font/fontello.svg?18878437#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .d-n {
   display: none;
 }
