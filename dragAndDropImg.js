@@ -5,13 +5,18 @@ $(document).ready(function () {
 	jQuery.event.props.push('dataTransfer');
 
 	// Максимальное количество загружаемых изображений за одни раз
-	var maxFiles = 100;
+	var maxFiles = 200;
 
 	// Оповещение по умолчанию
 	var errMessage = 0;
 
 	// Кнопка выбора файлов
 	var defaultUploadBtn = $('#uploadbtn');
+
+
+
+
+
 
 	// Массив для всех изображений
 	var dataArray = [];
@@ -93,10 +98,12 @@ $(document).ready(function () {
 			// Создаем новый экземпляра FileReader
 			var fileReader = new FileReader();
 			// Инициируем функцию FileReader
+			console.log();
 			fileReader.onload = (function (file) {
 
 				return function (e) {
 					// Помещаем URI изображения в массив
+					//console.log(e.target.result.readAsDataURL());
 					dataArray.push({
 						name: file.name,
 						value: this.result

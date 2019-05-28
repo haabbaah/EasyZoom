@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div class="wrapp-all">
+	<div class="wrapp-all d-n">
 		<!-- d-n -->
 		<div class="wrapper">
 			<div class="num-wrapper">
@@ -78,7 +78,12 @@
 								<input type="text" id="my-class" placeholder="">
 							</div>
 						</div>
-
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Добавить класс для img</h4>
+								<input type="text" id="img-class" placeholder="">
+							</div>
+						</div>
 						<div class="item">
 							<h4>Без рамки</h4>
 							<input type="checkbox" id="border">
@@ -132,6 +137,12 @@
 								<textarea name="" id="addcode-bottom" cols="30" rows="4"></textarea>
 							</div>
 						</div>
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Путь до img</h4>
+								<input type="text" id="path" placeholder="../shares/img/">
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -148,10 +159,21 @@
 								<input type="text" id="my-class-slider" placeholder="">
 							</div>
 						</div>
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Добавить класс для img</h4>
+								<input type="text" id="img-class-slider" placeholder="">
+							</div>
+						</div>
+						<div class="item">
+							<h4>без obj</h4>
+							<input type="checkbox" id="obj-slider">
+							<h4>с obj</h4>
+						</div>
 						<div class="item input">
 							<h4>Data-size</h4>
-							<input type="text" id="dataSize1-slider" placeholder="1200"> ×
-							<input type="text" id="dataSize2-slider" placeholder="800">
+							<input type="text" id="dataSize1-slider" placeholder=""> ×
+							<input type="text" id="dataSize2-slider" placeholder="">
 						</div>
 						<div class="item-input-multyline">
 							<div class="item-wrap">
@@ -176,60 +198,50 @@
 							</div>
 						</div>
 					</div>
+					<div class="option">
+						<div class="item-input-multyline">
+							<div class="item-wrap">
+								<h4>Путь до img</h4>
+								<input type="text" id="path-slider" placeholder="../shares/img/">
+							</div>
+						</div>
+					</div>
 
 				</div>
 			</section>
 		</div>
 	</div>
 
-	<section class="grfic-interface d-n">
-		<!-- d-n -->
-		<div class="wrapper-gui">
-			<div class="gui-item">
-				<!-- Область предпросмотра -->
-				<div id="uploaded-holder">
-					<div id="dropped-files">
-						<!-- Кнопки загрузить и удалить, а также количество файлов -->
-						<div id="upload-button">
-							<center>
-								<!-- Прогресс бар загрузки -->
-								<div id="loading">
-									<div id="loading-bar">
-										<div class="loading-color"></div>
-									</div>
-									<div id="loading-content"></div>
-								</div>
-							</center>
+
+
+
+
+	<section class="grfic-interface">
+
+		<div class="wrapper-dad">
+			<div class="item-first">
+				<output id="list">
+					<!-- 	<div class="dad-block">
+						<div class="wrap-img-btn">
+							<div>
+								<img class="thumb" src="1.jpg" alt="">
+							</div>
+							<button class="gui-btn-option"><i class="demo-icon icon-cog">&#xe802;</i></button>
 						</div>
 
-						<!-- <div class="wrapper-element" data-element="1">
-							<div id="img-1" class="image" style="background: url(1.jpg); background-size: cover;">
-								<a href="#" id="drop-1" class="drop-button">Удалить изображение</a>
-							</div>
+						<strong>123</strong>
+						<textarea class="description"></textarea>
+
+						<div class="wrapper-element">
 							<div class="option-item">
-								<div class="item input">
-									<h4>№</h4>
-									<input type="text" id="gui-num" placeholder="" value="">
-								</div>
-								<div class="item">
-									<h4>JPG</h4>
-									<input type="checkbox" id="gui-format">
-									<h4>PNG</h4>
-								</div>
 								<div class="item">
 									<h4>Без рамки</h4>
 									<input type="checkbox" id="gui-frame">
 									<h4>С рамкой</h4>
 								</div>
-								<div class="item">
-									<h4>Без тени</h4>
-									<input type="checkbox" id="gui-shadow">
-									<h4>С тенью</h4>
-								</div>
 								<div class="item input">
-									<h4>Data-size</h4>
-									<input type="text" id="gui-dataSize1" placeholder="1200"> ×
-									<input type="text" id="gui-dataSize2" placeholder="800">
+									<h4>Класс для img</h4>
+									<input type="text" id="gui-my-img-class" placeholder="">
 								</div>
 								<div class="item input">
 									<h4>Обернуть в свой класс</h4>
@@ -237,91 +249,96 @@
 								</div>
 								<div class="item input">
 									<h4>Отступ сверху</h4>
-									<input type="text" id="gui-mTop" placeholder="2"> <span>em</span>
+									<input type="text" id="gui-mTop" placeholder=""> <span>em</span>
 								</div>
 								<div class="item input">
 									<h4>Отступ снизу</h4>
-									<input type="text" id="gui-mBottom" placeholder="2"> <span>em</span>
+									<input type="text" id="gui-mBottom" placeholder=""> <span>em</span>
 								</div>
 							</div>
-							<button class="gui-btn-option" data-btn-option="1"><i class="demo-icon icon-cog">&#xe802;</i></button>
 						</div>
-						<textarea data-text="1" class="description" cols="30" rows="3">
-						</textarea> -->
 
-					</div>
-				</div>
+					</div> -->
+				</output>
 
-				<!-- <textarea class="description" cols="30" rows="3"></textarea> -->
 			</div>
-			<div class="gui-item">
-				<div class="close-gui">
-					ВЫЙТИ
-				</div>
-				<div class="content">
-					<!-- Область для перетаскивания -->
-					<div id="drop-files" ondragover="return false">
-						<p>Перетащите изображение сюда</p>
-						<form id="frm">
-							<input type="file" id="uploadbtn" multiple />
-						</form>
+			<div class="item-second">
+				<div class="option-dad">
+					<div class="close-gui">
+						ВЫЙТИ
 					</div>
-					<!-- Список загруженных файлов -->
-					<div id="file-name-holder">
-						<ul id="uploaded-files">
-							<h1>Загруженные файлы</h1>
-						</ul>
+					<input type="file" id="files" name="files[]" multiple />
+
+					<div class="get-gui-code">
+						<button id="btn-gui" class="btn-get">Получить</button>
+						<textarea name="" id="result-gui" cols="30" rows="5"></textarea>
 					</div>
 
-				</div>
-				<div class="get-gui-code">
-					<button id="btn-gui" class="btn-get">Получить</button>
-					<textarea name="" id="result-gui" cols="30" rows="5"></textarea>
+					<div class="gui-slider btn-get">
+						СЛАЙДЕР
+					</div>
+
+					<div class="option-item">
+
+						<div class="item">
+							<h4>Без рамки</h4>
+							<input type="checkbox" id="gui-comm-frame">
+							<h4>С рамкой</h4>
+						</div>
+						<div class="item input">
+							<h4>Класс для img</h4>
+							<input type="text" id="gui-comm-img-class" placeholder="">
+						</div>
+						<div class="item input">
+							<h4>Обернуть в свой класс</h4>
+							<input type="text" id="gui-comm-my-class" placeholder="" style="width: 5em;">
+						</div>
+						<div class="item input">
+							<h4>Отступ сверху</h4>
+							<input type="text" id="gui-comm-mTop" placeholder=""> <span>em</span>
+						</div>
+						<div class="item input">
+							<h4>Отступ снизу</h4>
+							<input type="text" id="gui-comm-mBottom" placeholder=""> <span>em</span>
+						</div>
+						<div class="item input input-path">
+							<h4>Путь до img</h4>
+							<input type="text" id="gui-comm-path" placeholder="../shares/img/">
+						</div>
+					</div>
+
+					<button id="sort" class="btn-get btn-sort">Сортировка</button>
+
+						<div class="global-option-dad">
+							<input type="checkbox" id="default-screen">
+							<h4>Экран по умолчанию</h4>
+						</div>
+
 				</div>
 
-				<div class="option-item">
-					<div class="item input">
-						<h4>Начать с</h4>
-						<input type="text" id="gui-comm-start" placeholder="">
+				<!-- 	<div class="option-dad-slider">
+					<div class="get-gui-code">
+						<button id="btn-gui" class="btn-get">Получить</button>
+						<textarea name="" id="result-gui" cols="30" rows="5"></textarea>
 					</div>
-					<div class="item">
-						<h4>JPG</h4>
-						<input type="checkbox" id="gui-comm-format">
-						<h4>PNG</h4>
-					</div>
-					<div class="item">
-						<h4>Без рамки</h4>
-						<input type="checkbox" id="gui-comm-frame">
-						<h4>С рамкой</h4>
-					</div>
-					<div class="item">
-						<h4>Без тени</h4>
-						<input type="checkbox" id="gui-comm-shadow">
-						<h4>С тенью</h4>
-					</div>
-					<div class="item input">
-						<h4>Data-size</h4>
-						<input type="text" id="gui-comm-dataSize1" placeholder=""> ×
-						<input type="text" id="gui-comm-dataSize2" placeholder="">
-					</div>
-					<div class="item input">
-						<h4>Обернуть в свой класс</h4>
-						<input type="text" id="gui-comm-my-class" placeholder="" style="width: 5em;">
-					</div>
-					<div class="item input">
-						<h4>Отступ сверху</h4>
-						<input type="text" id="gui-comm-mTop" placeholder=""> <span>em</span>
-					</div>
-					<div class="item input">
-						<h4>Отступ снизу</h4>
-						<input type="text" id="gui-comm-mBottom" placeholder=""> <span>em</span>
-					</div>
-				</div>
-
+				</div> -->
 			</div>
 		</div>
 
+
+
+
+	
+
 	</section>
+
+	<div class="choiceBkg d-n">
+
+	</div>
+
+
+
+
 
 
 

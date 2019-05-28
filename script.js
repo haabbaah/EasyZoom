@@ -1,5 +1,24 @@
 $(function () {
 
+
+
+	var defaultScreen = localStorage.getItem("defaultScreen");
+	if (defaultScreen === 'true') {
+		$('.wrapp-all').addClass('d-n');
+		$('.grfic-interface').removeClass('d-n');
+		$(".grfic-interface #default-screen").each(function () {
+			$(this).prop("checked", true);
+		});
+	} else {
+		$('.wrapp-all').removeClass('d-n');
+		$('.grfic-interface').addClass('d-n');
+		$(".grfic-interface #default-screen").each(function () {
+			$(this).prop("checked", false);
+		});
+	}
+
+
+
 	inputResult = $("#result");
 
 	//Для удобства
@@ -12,7 +31,7 @@ $(function () {
 
 	//Для удобства end
 
-	function getMin(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, addCodeTop, addCodeBottom, arrPass, arrOnly) {
+	function getMin(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, imgClass, addCodeTop, addCodeBottom, arrPass, arrOnly, path) {
 		var i = +start || "1";
 		var max = Math.max.apply(null, arrOnly);
 
@@ -49,6 +68,12 @@ $(function () {
 			endImage80 = '</div>\n';
 		}
 
+
+		let imgClassVal = '';
+		if (imgClass) {
+			imgClassVal = imgClass;
+		}
+
 		shadow ? shadow = 'shadow' : shadow = '';
 
 		jpgPng ? jpgPng = 'png' : jpgPng = 'jpg';
@@ -72,7 +97,7 @@ $(function () {
 			if (passCheck) {
 				continue;
 			}
-			if (arrOnly[1]) {
+			if (arrOnly[0]) {
 				onlyCheck = arrOnly.some(isNegative);
 				if (!onlyCheck) {
 					continue;
@@ -83,12 +108,20 @@ $(function () {
 				i = "0" + i;
 			}
 
-			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + border + ' ' + shadow + '" />\n</a>\n</figure>\n</div>\n' + endImage80 + addCodeBottom;
+			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + path + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + path + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + imgClassVal + ' ' + border + ' ' + shadow + '" />\n</a>\n</figure>\n</div>\n' + endImage80 + addCodeBottom;
 		}
 		return str;
 	}
 
-	function getMax(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, addCodeTop, addCodeBottom, arrPass, arrOnly) {
+
+
+
+
+
+
+
+
+	function getMax(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, imgClass, addCodeTop, addCodeBottom, arrPass, arrOnly, path) {
 		var i = +start || 1;
 		var max = Math.max.apply(null, arrOnly);
 		if (end) {
@@ -127,6 +160,12 @@ $(function () {
 			endImage80 = '</div>\n';
 		}
 
+
+		let imgClassVal = '';
+		if (imgClass) {
+			imgClassVal = imgClass;
+		}
+
 		shadow ? shadow = 'shadow' : shadow = '';
 		jpgPng ? jpgPng = 'png' : jpgPng = 'jpg';
 		border ? border = 'frame' : border = '';
@@ -146,7 +185,7 @@ $(function () {
 			if (passCheck) {
 				continue;
 			}
-			if (arrOnly[1]) {
+			if (arrOnly[0]) {
 				onlyCheck = arrOnly.some(isNegative);
 				if (!onlyCheck) {
 					continue;
@@ -156,7 +195,7 @@ $(function () {
 			if (i < 10) {
 				i = "0" + i;
 			}
-			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + border + ' ' + shadow + '" />\n</a>\n<figcaption itemprop="caption description">\n\n </figcaption>\n</figure>\n</div>\n' + endImage80 + '<figcaption itemprop="caption description">\n\n</figcaption>\n' + addCodeBottom;
+			str = str + addCodeTop + startImage80 + '\n<div class="zooming">\n<figure itemprop="associatedMedia" style="margin-top: ' + mTop + 'em; margin-bottom: ' + mBottom + 'em">\n<a href="' + path + i + '.' + jpgPng + '" itemprop="contentUrl" data-size="' + dataSize1 + x + dataSize2 + '">\n<img src="' + path + i + '.' + jpgPng + '" itemprop="thumbnail" class="' + imgClassVal + ' ' + border + ' ' + shadow + '" />\n</a>\n<figcaption itemprop="caption description">\n\n </figcaption>\n</figure>\n</div>\n' + endImage80 + '<figcaption itemprop="caption description">\n\n</figcaption>\n' + addCodeBottom;
 		}
 		return str;
 	}
@@ -173,11 +212,14 @@ $(function () {
 		var mTop = $("#mTop").val();
 		var mBottom = $("#mBottom").val();
 		var myClass = $("#my-class").val();
+		var imgClass = $("#img-class").val();
 		var pass = $("#pass").val();
 		var only = $("#only").val();
 		var addCodeTop = $("#addcode-top").val();
 		var addCodeBottom = $("#addcode-bottom").val();
 		var image80 = $("#image80").prop('checked');
+		var path = $("#path").val();
+
 
 		var str = '';
 		var num = +inputNum.val();
@@ -185,10 +227,11 @@ $(function () {
 		var arrPass = pass.split(' ');
 		var arrOnly = only.split(' ');
 
+
 		if ($('#min-max').prop('checked')) {
-			str = getMax(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, addCodeTop, addCodeBottom, arrPass, arrOnly);
+			str = getMax(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, imgClass, addCodeTop, addCodeBottom, arrPass, arrOnly, path);
 		} else {
-			str = getMin(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, addCodeTop, addCodeBottom, arrPass, arrOnly);
+			str = getMin(str, num, jpgPng, border, start, end, dataSize1, dataSize2, mTop, mBottom, image80, shadow, myClass, imgClass, addCodeTop, addCodeBottom, arrPass, arrOnly, path);
 		}
 		inputResult.val(str);
 
